@@ -7,10 +7,22 @@
  	#end
  #end	
  
+ #set($name = "joe")
+#set($address = "@hotmail.net")
+
+ #set($accountNumber = "1234 6 8 9 ")
+
+
+
  
  <HTML>
     <HEAD>
       <TITLE>Pet Store Sale!</TITLE>
+      <h3> My e-mail address is: $name$address </h3>
+       <h3> My Ac no is: $accountNumber.trim(). </h3>
+       
+       <h3> My Ac no is: $accountNumber.replace(" ", "").</h3>
+       
     </HEAD>
     <BODY>
       <CENTER>
