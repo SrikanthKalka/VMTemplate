@@ -3,13 +3,18 @@
   #foreach($product in $productList)  
   #if ($rowCount % 2 == 0)
     #set ($bgcolor = "BLUE")
+       <tr>
+   	  <td bgcolor="$bgcolor">$product.trim()</td><br/>
+      <td bgcolor="$bgcolor">$product.replace(" ","")</td><br/><br/>
+    </tr>   
   #else
-    #set ($bgcolor = "RED")        
+    #set ($bgcolor = "RED")  
+      <tr>
+   	  <td bgcolor="$bgcolor">$product.trim()</td><br/>
+      <td bgcolor="$bgcolor">$product.replace(" ","")</td><br/>
+    </tr>       
   #end
-    <tr>
-      <td bgcolor="$bgcolor">$product.replace(" ","")</td>
-      <td bgcolor="$bgcolor">$product.trim()</td>
-    </tr>            
+                
     #set ($rowCount = $rowCount + 1)
   #end
   $product
