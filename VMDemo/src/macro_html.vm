@@ -1,0 +1,29 @@
+#macro (writeTable $productList)
+  #set ($rowCount = 1)      
+  #foreach($product in $productList)  
+  #if ($rowCount % 2 == 0)
+    #set ($bgcolor = "BLUE")
+  #else
+    #set ($bgcolor = "RED")        
+  #end
+    <tr>
+      <td bgcolor="$bgcolor">$product.replace(" ","")</td>
+      <td bgcolor="$bgcolor">$product.trim()</td>
+    </tr>            
+    #set ($rowCount = $rowCount + 1)
+  #end
+  $product
+#end
+
+
+#set ($products = ["on e .", "two", "three"])
+<html>
+  <head>
+    <title>Title</title>
+  </head>
+  <body>
+    <table>
+      #writeTable($products)
+    </table>
+  </body>
+</html>
